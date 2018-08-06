@@ -1,8 +1,30 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: #fff;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      display: none; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px); }
+
 * {
   box-sizing: border-box; }
 
 body {
-  background: #444;
+  background: #edd2c8;
   color: white;
   height: 100%;
   margin: 0;
@@ -19,7 +41,7 @@ body {
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: rgba(68, 68, 68, 0.7); }
+      background: rgba(237, 210, 200, 0.9); }
 
 h1, h2, h3 {
   margin: 0;
@@ -29,7 +51,7 @@ h1, h2, h3 {
   h1.sm-heading, h2.sm-heading, h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(73, 73, 73, 0.5); }
+    background: rgba(240, 216, 208, 0.5); }
 
 a {
   color: #fff;
@@ -41,7 +63,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eece1a; }
+  color: #2f52a0; }
 
 main {
   padding: 4rem;
@@ -51,7 +73,7 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #eece1a;
+        color: #2f52a0;
         transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
