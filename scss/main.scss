@@ -1,6 +1,8 @@
 @import 'config';
 @import 'menu';
 
+
+
 *{
     box-sizing:border-box;
 }
@@ -13,22 +15,27 @@ body{
     margin:0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
+ 
 }
 
 // headings
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     margin:0;
     font-weight: 400;
 
     &.lg-heading{
-        font-size: 6rem;
+        font-size: 5rem;          
+        
+        span {
+            display: inline;
+        }
      }
 
-     &.sm-heading{
+     &.sm-heading{         
          margin-bottom: 2rem;
-         padding: 0.2rem 1rem;
-         background:rgba(lighten($primary-color, 2), 0.5);
+         padding: 0.2rem ;
+         
      }
     }
 
@@ -49,8 +56,8 @@ h1, h2, h3 {
 
          main {
              padding: 4rem;
-             height:100%;
-
+             min-height: calc(100vh - 60px);
+             
              .icons{
                  margin-top:1rem;
 
@@ -71,4 +78,93 @@ h1, h2, h3 {
                 }
              }
          }   
+
+.about-info{
+    display: grid;
+    grid-gap:30px;
+    grid-template-areas: 
+    'edu1 edu2 edu3'
+    'job1 job2 job3'
+    'addInfo addInfo addInfo';
+    grid-template-columns: repeat (3, 1fr);
+
+    .edu-1{
+        grid-area: edu1;
+        
+    }    
+    .edu-2{
+        grid-area: edu2
+    }
+    .edu-3{
+        grid-area: edu3
+    }
+      
+    .job-1{
+        grid-area: job1;
+    }
+    
+    .job-2{
+        grid-area: job2;
+    }
+        
+    .job-3{
+        grid-area: job3;
+        
+    }
+
+    .add-Info {
+        grid-area: addInfo;        
+
+        .collapsible {
+            background: darken($primary-color, $amount:3);
+            color:white;
+            cursor: pointer;
+            padding:0.5rem;
+            width:100%;
+            border:none;
+            outline:none;
+            text-align: left;     
+            @include easeOut;   
+            
+           .active, &:hover {
+                background: $secondary-color;
+                 }
+             }
+
+             .content{
+               display:none;
+               overflow: hidden;             
+              
+             }            
+
+         }
+    
+    .job {
+        background:lighten($primary-color, 2);
+        padding:0.5rem;
+        border-bottom: $secondary-color 5px solid;
+        
+    }
+
+    .edu {
+        background:lighten($primary-color, 2);   
+        padding:0.5rem;     
+    }
+
+}
+
+#main-footer {
+    text-align:center;
+    padding:1rem;
+    background:darken($primary-color, 5);
+    height:60px;
+}
+
+@import 'mobile';
+
+
+
+
+    
+
     

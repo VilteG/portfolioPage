@@ -29,6 +29,30 @@ function toggleMenu(){
     }
 }
 
+//About page paragraph collapsible
+
+const aboutCollapsible = document.querySelector('.collapsible');
+
+//Initial state of pragraph
+
+let displayAbout = false;
+
+aboutCollapsible.addEventListener('click', openCollapsible);
+
+function openCollapsible(){
+    this.classList.toggle("active");
+    let content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+    
+}
+
+
+
+
 
 
 
