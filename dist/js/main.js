@@ -39,14 +39,16 @@ let displayAbout = false;
 
 aboutCollapsible.addEventListener('click', openCollapsible);
 
-function openCollapsible(){
-    this.classList.toggle("active");
-    let content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
+function openCollapsible(){    
+    
+    if (!displayAbout) {
+     document.querySelector('.content').style.display = "block";
+     displayAbout = true;
     } else {
-      content.style.display = "block";
+      document.querySelector('.content').style.display = "none";
+      displayAbout = false;
     }
+
     
 }
 
